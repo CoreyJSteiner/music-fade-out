@@ -9,8 +9,7 @@ async function fadeOutPlaylist(playlist){
 		from: curVol
 	})
 	//stop the player for all playlists
-	let buffer = game.settings.get('global-playlist-control', 'duration') + 1000
-	setTimeout(playlist.stopAll(), buffer)
+	playlist.stopAll()
 	return
 }
 
