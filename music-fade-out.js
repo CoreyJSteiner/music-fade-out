@@ -12,7 +12,7 @@ function fadeOutPlaylist(playlist){
 }
 
 function fadeOutPlaying(){
-	ui.notifications.info(`Fading all playlists: ${game.settings.get('global-playlist-control', 'duration')ms}`)
+	ui.notifications.info(`Fading all playlists: ${game.settings.get('global-playlist-control', 'duration')}ms`)
 	//fade out (volume) for all playing
 	await game.playlists.filter(p => p.playing).forEach(p => fadeOutPlaylist(p))
 	//stop the player for all playlists
