@@ -30,7 +30,7 @@ Hooks.once("setup", async () => {
 		type: Boolean,
 		default: true,
 		onChange: value => {
-			game.playlists.filter(p = p.playing.forEach(p => {
+			game.playlists.filter(p => p.playing.forEach(p => {
 				fadeOutPlaylist(p)
 			}))
 		}
