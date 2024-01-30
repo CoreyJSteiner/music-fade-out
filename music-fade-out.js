@@ -1,3 +1,5 @@
+const ROLE_GM = 4
+
 async function fadeOutPlaylist(playlist){
 	if(!playlist.playing) return
 	let settingsFadeDuration = game.settings.get('global-playlist-control', 'duration')
@@ -8,8 +10,10 @@ async function fadeOutPlaylist(playlist){
 		duration: settingsFadeDuration,
 		from: curVol
 	})
-	//stop the player for all playlists
-	playlist.stopAll()
+	//stop the player for all playlists, function pushes natively to users (unlike fade property)
+	if(game.user.role == ROLE_GM){
+		playlist.stopAll()
+	} 
 	return
 }
 
