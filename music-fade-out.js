@@ -1,23 +1,23 @@
-function fadeOutPlaylist(playlist){
+async function fadeOutPlaylist(playlist){
 	if(!playlist.playing) return
 	let settingsFadeDuration = game.settings.get('global-playlist-control', 'duration')
 	let playingSound = playlist.sounds.filter(s => s.playing).find(_ => true).sound;
 	let curVol = playingSound.volume
 	if(curVol == 0) return
-	playingSound.fade(0, {
+	await playingSound.fade(0, {
 		duration: settingsFadeDuration,
 		from: curVol
 	})
+	//stop the player for all playlists
+	let buffer = game.settings.get('global-playlist-control', 'duration') + 1000
+	setTimeout(playlist.stopAll(), buffer)
 	return
 }
 
 function fadeOutPlaying(){
 	ui.notifications.info(`Fading all playlists: ${game.settings.get('global-playlist-control', 'duration')}ms`)
-	//fade out (volume) for all playing
+	//fade outfor all playing
 	game.playlists.filter(p => p.playing).forEach(p => fadeOutPlaylist(p))
-	//stop the player for all playlists
-	let buffer = game.settings.get('global-playlist-control', 'duration') + 1000
-	setTimeout(playlist.stopAll(), buffer)
 	ui.notifications.info('Playlists stopped')
 }
 
