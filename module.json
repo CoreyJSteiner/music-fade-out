@@ -1,0 +1,20 @@
+{
+  "id": "music-fade-out",
+  "name": "music-fade-out",
+  "title": "Music Fade Out",
+  "description": "Fades out music for all players based on registerd configuration",
+  "authors": [{"name":"Xaukael"}],
+  "version": "0.0.1",
+	"socket": true,
+  "compatibility": {
+      "minimum": "11",
+      "verified": "11"
+    },
+  "scripts": ["music-fade-out.js"],
+  "relationships": {
+      "requires": []
+  },
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
