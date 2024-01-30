@@ -14,9 +14,10 @@ function fadeOutPlaylist(playlist){
 function fadeOutPlaying(){
 	ui.notifications.info(`Fading all playlists: ${game.settings.get('global-playlist-control', 'duration')}ms`)
 	//fade out (volume) for all playing
-	await game.playlists.filter(p => p.playing).forEach(p => fadeOutPlaylist(p))
+	game.playlists.filter(p => p.playing).forEach(p => fadeOutPlaylist(p))
 	//stop the player for all playlists
-	playlist.stopAll()
+	let buffer = game.settings.get('global-playlist-control', 'duration') + 1000
+	setTimeout(playlist.stopAll(), buffer)
 	ui.notifications.info('Playlists stopped')
 }
 
@@ -38,7 +39,9 @@ Hooks.once("setup", async () => {
 		config: false,
 		type: Boolean,
 		default: true,
-		onChange: value => { fadeOutPlaying() }
+		onChange: value => {
+			fadeOutPlaying()
+		}
 	})
 
 })
