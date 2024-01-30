@@ -15,6 +15,6 @@
       "requires": []
   },
   "url": "https://github.com/CoreyJSteiner/music-fade-out/",
-  "manifest": "https://github.com/CoreyJSteiner/music-fade-out/raw/main/module.json",
-  "download": "https://github.com/CoreyJSteiner/music-fade-out/raw/main/music-fade-out.zip"
+  "manifest": "https://github.com/CoreyJSteiner/music-fade-out/master/module.json",
+  "download": "https://github.com/CoreyJSteiner/music-fade-out/master/music-fade-out.zip"
 }
