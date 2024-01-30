@@ -25,7 +25,7 @@ Hooks.once("setup", async () => {
 		type: Number,
 		default: 5000,
 		onChange: value => { }
-	}
+	})
 
 	game.settings.register('global-playlist-control', 'toggle', {
 		name: `Trigger Fade`,
@@ -35,5 +35,6 @@ Hooks.once("setup", async () => {
 		type: Boolean,
 		default: true,
 		onChange: value => { fadeOutPlaying() }
-	}
+	})
+	
 })
