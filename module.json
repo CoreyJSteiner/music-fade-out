@@ -4,7 +4,7 @@
   "title": "Music Fade Out",
   "description": "Fades out music for all players based on registerd configuration",
   "authors": [{"name":"CoreyJSteiner"}],
-  "version": "0.0.3",
+  "version": "0.0.4",
 	"socket": true,
   "compatibility": {
       "minimum": "11",
